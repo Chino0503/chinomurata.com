@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chino Murata</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=M+PLUS+Rounded+1c:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <a href="#" class="logo">chino murata</a>
+      <nav>
+        <ul class="nav-list" id="navList">
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-button" id="mobileMenuButton" aria-controls="navList" aria-expanded="false" aria-label="open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery-top">
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=800&h=1200&fit=crop" alt="書道作品1" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&h=1200&fit=crop" alt="書道作品2" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1524678714210-9917a6c619c2?w=800&h=1200&fit=crop" alt="書道作品3" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1455541504462-57ebb2a9cec1?w=800&h=1200&fit=crop" alt="篆刻作品2" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?w=800&h=1200&fit=crop" alt="書道作品4" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Profile Section -->
+  <section id="profile" class="profile">
+    <div class="section-title profile-title">Profile</div>
+    <div class="profile-container">
+      <div class="profile-image">
+        <img src="picture/profile.png" alt="murata chino" />
+      </div>
+      <div class="profile-content">
+        <h2>村田 智野 murata chino</h2>
+        <p>
+          奈良県出身、埼玉県在住。<br />
+          奈良教育大学書道芸術専攻卒業。<br />
+          書を書いたり、印を彫ったりしています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="section-title">Contact</div>
+    <div class="contact-content">
+      <h2>お問い合わせ</h2>
+      <p>
+        作品に関するお問い合わせ、ご依頼は<br />
+        Concact Me もしくは<a href="https://www.instagram.com/chino_murata/">Instagram</a>のDMよりお気軽にご連絡ください。
+      </p>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfYiP25j410rGIHICzYmb-r6kKbPRrgvNj50Bug_0qsInX5KQ/viewform"
+        class="contact-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Contact Me</a>
+      
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <a href="#" class="footer-logo">chino murata</a>
+      <ul class="footer-nav">
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="social-links">
+        <a href="https://www.instagram.com/chino_murata/">Instagram</a>
+      </div>
+    </div>
+    <p class="copyright">Copyright © chino murata</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
