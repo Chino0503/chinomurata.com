@@ -159,7 +159,6 @@ section {
   margin-bottom: 2rem;
   color: var(--white);
 
-  /* 追加/変更 */
   white-space: nowrap;
   font-size: clamp(22px, 4.2vw, 40px);
   letter-spacing: clamp(0.01em, 0.6vw, 0.12em);
@@ -169,7 +168,6 @@ section {
   overflow-wrap: normal;
   word-break: normal;
 }
-
 
 .profile-content p {
   font-size: 0.95rem;
@@ -363,7 +361,7 @@ footer {
     display: block;
   }
 
-  /* ---- Layout ---- */
+  /* Layout */
   section {
     padding: 5rem 1.5rem;
   }
@@ -382,12 +380,12 @@ footer {
     gap: 3rem;
   }
 
-  /* ---- Profile ---- */
+  /* Profile */
   .profile-image {
     max-width: 420px;
     margin: 0 auto;
   }
-  /* ---- Footer ---- */
+  /* Footer */
   .footer-content {
     flex-direction: column;
     gap: 2rem;
