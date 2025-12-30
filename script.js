@@ -1,50 +1,43 @@
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (!target) return;
+// =========================
+// Mobile Navigation
+// =========================
+const mobileMenuButton = document.getElementById("mobile-menu-button");
+const navList = document.getElementById("nav-list");
 
-    const headerOffset = 80;
-    const elementPosition = target.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-
-    // モバイルメニューが開いてたら閉じる（体験が良くなる）
-    const navList = document.getElementById("navList");
-    const btn = document.getElementById("mobileMenuButton");
-    if (navList?.classList.contains("is-open")) {
-      navList.classList.remove("is-open");
-      btn?.setAttribute("aria-expanded", "false");
-    }
-  });
-});
-
-// Fade in on scroll
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
+const toggleNav = () => {
+  navList.classList.toggle("is-open");
 };
 
-const observer = new IntersectionObserver((entries) => {
+const closeNav = () => {
+  navList.classList.remove("is-open");
+};
+
+mobileMenuButton?.addEventListener("click", toggleNav);
+
+navList?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", closeNav);
+});
+
+// =========================
+// Scroll Reveal Animation
+// =========================
+const REVEAL_SELECTOR =
+  ".gallery-item, .profile-container, .contact-content";
+
+const observerOptions = {
+  threshold: 0.15,
+  rootMargin: "0px 0px -10% 0px",
+};
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
-    if (entry.isIntersecting) entry.target.classList.add("fade-in");
+    if (!entry.isIntersecting) return;
+
+    entry.target.classList.add("is-visible");
+    observer.unobserve(entry.target);
   });
 }, observerOptions);
 
-document
-  .querySelectorAll(".gallery-item, .profile-container, .contact-content")
-  .forEach((el) => observer.observe(el));
-
-// Mobile menu toggle
-const mobileMenuButton = document.getElementById("mobileMenuButton");
-const navList = document.getElementById("navList");
-
-if (mobileMenuButton && navList) {
-  mobileMenuButton.addEventListener("click", () => {
-    const willOpen = !navList.classList.contains("is-open");
-    navList.classList.toggle("is-open", willOpen);
-    mobileMenuButton.setAttribute("aria-expanded", String(willOpen));
-  });
-}
+document.querySelectorAll(".reveal").forEach((el) => {
+  revealObserver.observe(el);
+});

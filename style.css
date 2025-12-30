@@ -98,7 +98,7 @@ section {
 .gallery-grid {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 24px;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -113,6 +113,7 @@ section {
   aspect-ratio: 1 / 1;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 16px;  /* 12〜20px 好みで */
 }
 
 .gallery-item img {
@@ -150,7 +151,7 @@ section {
   display: block;
 
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 92%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 92%, transparent 100%); 
 }
 
 .profile-content h2 {
@@ -397,18 +398,30 @@ footer {
   }
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* =========================
+   Scroll Reveal
+   ========================= */
+
+/* 初期状態（非表示） */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+  will-change: opacity, transform;
 }
 
-.fade-in {
-  animation: fadeIn 0.8s ease-out;
+/* 表示状態 */
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 動きを減らしたい人向け */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    transform: none;
+  }
 }
