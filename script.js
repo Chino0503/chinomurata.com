@@ -1,8 +1,8 @@
 // =========================
 // Mobile Navigation
 // =========================
-const mobileMenuButton = document.getElementById("mobile-menu-button");
-const navList = document.getElementById("nav-list");
+const mobileMenuButton = document.getElementById("mobileMenuButton");
+const navList = document.getElementById("navList");
 
 const toggleNav = () => {
   navList.classList.toggle("is-open");

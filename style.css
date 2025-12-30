@@ -183,9 +183,9 @@ section {
   color: var(--lavender);
 }
 
-/* Profileだけ締める（Desktop） */
 #profile {
-  padding: 3.5rem 3rem 4rem; /* 上右下左 */
+  scroll-margin-top: 54px;
+  padding: 3.5rem 3rem 4rem; /* 上・左右・下 */
 }
 
 #profile .section-title {
