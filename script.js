@@ -41,3 +41,12 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll(".reveal").forEach((el) => {
   revealObserver.observe(el);
 });
+
+// =========================
+// Gallery Item Overlay
+// =========================
+document.querySelectorAll(".gallery-item").forEach((item) => {
+  item.addEventListener("click", () => {
+    item.classList.toggle("is-active");
+  });
+});

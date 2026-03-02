@@ -6,6 +6,10 @@
   --lavender: #d1bada;
   --light-lavender: #f0ebf3;
   --border-color: #e8dfe8;
+
+  /* Layout constants */
+  --header-height: 54px;
+  --section-padding: 8rem 3rem;
 }
 
 * {
@@ -21,7 +25,9 @@ body {
   line-height: 1.8;
 }
 
-/* Header */
+/* ===================================
+   Header
+   =================================== */
 header {
   position: fixed;
   top: 0;
@@ -71,7 +77,9 @@ nav a:hover {
   opacity: 0.5;
 }
 
-/* Section Common Styles */
+/* ===================================
+   Section Common Styles
+   =================================== */
 section {
   padding: 8rem 3rem;
   margin: 0;
@@ -89,7 +97,9 @@ section {
   color: var(--lavender);
 }
 
-/* Gallery Section */
+/* ===================================
+   Gallery Section
+   =================================== */
 .gallery-top {
   padding-top: 100px;
   background: #f3f0f5;
@@ -113,7 +123,21 @@ section {
   aspect-ratio: 1 / 1;
   overflow: hidden;
   cursor: pointer;
-  border-radius: 16px;  /* 12〜20px 好みで */
+  /* Adjustable: 12-20px */
+  border-radius: 16px;
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .gallery-item img {
@@ -127,7 +151,21 @@ section {
   transform: scale(1.05);
 }
 
-/* Profile Section */
+/* Apply hover effect only on devices that support hover (desktop) */
+@media (hover: hover) and (pointer: fine) {
+  .gallery-item:hover .gallery-overlay {
+    opacity: 1;
+  }
+}
+
+/* Mobile: Show overlay on tap */
+.gallery-item.is-active .gallery-overlay {
+  opacity: 1;
+}
+
+/* ===================================
+   Profile Section
+   =================================== */
 .profile {
   background: var(--black);
 }
@@ -165,7 +203,7 @@ section {
   letter-spacing: clamp(0.01em, 0.6vw, 0.12em);
   line-height: 1.1;
 
-  /* どこかで折り返し強制が入ってても負けないように */
+  /* Prevent forced line breaks from overriding nowrap */
   overflow-wrap: normal;
   word-break: normal;
 }
@@ -184,8 +222,9 @@ section {
 }
 
 #profile {
-  scroll-margin-top: 54px;
-  padding: 3.5rem 3rem 4rem; /* 上・左右・下 */
+  scroll-margin-top: var(--header-height);
+  /* top, left/right, bottom */
+  padding: 3.5rem 3rem 4rem;
 }
 
 #profile .section-title {
@@ -196,7 +235,9 @@ section {
   max-width: 420px;
 }
 
-/* Contact Section */
+/* ===================================
+   Contact Section
+   =================================== */
 .contact {
   text-align: center;
   background: var(--white);
@@ -243,7 +284,9 @@ section {
   border-color: var(--lavender);
 }
 
-/* Footer */
+/* ===================================
+   Footer
+   =================================== */
 footer {
   padding: 3rem;
   text-align: center;
@@ -312,7 +355,9 @@ footer {
   opacity: 0.5;
 }
 
-/* Mobile Menu */
+/* ===================================
+   Mobile Menu
+   =================================== */
 .mobile-menu-button {
   display: none;
   background: none;
@@ -322,9 +367,9 @@ footer {
   color: var(--black);
 }
 
-/* =========================
+/* ===================================
    Responsive
-   ========================= */
+   =================================== */
 
 /* Tablet */
 @media (max-width: 1024px) {
@@ -333,10 +378,20 @@ footer {
   }
 }
 
+/* Desktop Gallery Layout */
+@media (min-width: 769px) {
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 1100px;
+  }
+}
+
 /* Mobile */
 @media (max-width: 768px) {
 
-  /* ---- Header / Navigation ---- */
+  /* Header / Navigation */
   .header-content {
     padding: 1rem 1.5rem;
   }
@@ -386,6 +441,7 @@ footer {
     max-width: 420px;
     margin: 0 auto;
   }
+
   /* Footer */
   .footer-content {
     flex-direction: column;
@@ -398,11 +454,11 @@ footer {
   }
 }
 
-/* =========================
+/* ===================================
    Scroll Reveal
-   ========================= */
+   =================================== */
 
-/* 初期状態（非表示） */
+/* Initial state (hidden) */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -412,13 +468,13 @@ footer {
   will-change: opacity, transform;
 }
 
-/* 表示状態 */
+/* Visible state */
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* 動きを減らしたい人向け */
+/* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     transition: none;
