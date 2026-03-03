@@ -162,6 +162,7 @@ section {
 /* Mobile: Show overlay on tap */
 .gallery-item.is-active .gallery-overlay {
   opacity: 1;
+  border-radius: 16px;
 }
 
 /* ===================================
