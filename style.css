@@ -125,6 +125,7 @@ section {
   cursor: pointer;
   /* Adjustable: 12-20px */
   border-radius: 16px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .gallery-overlay {
