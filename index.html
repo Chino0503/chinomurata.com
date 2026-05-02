@@ -5,120 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chino Murata</title>
   <link rel="icon" href="picture/favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=M+PLUS+Rounded+1c:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <link rel="stylesheet" href="style.css" />
+    body {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 400;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      letter-spacing: 0.12em;
+      color: #1a1a1a;
+    }
+  </style>
 </head>
-
 <body>
-  <!-- Header -->
-  <header>
-    <div class="header-content">
-      <a href="#" class="logo">chino murata</a>
-      <nav>
-        <ul class="nav-list" id="navList">
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#profile">Profile</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="mobile-menu-button" id="mobileMenuButton" aria-controls="navList" aria-expanded="false" aria-label="open menu">☰</button>
-    </div>
-  </header>
-
-  <!-- Gallery Section -->
-  <section id="gallery" class="gallery-top">
-    <div class="gallery-grid">
-
-      <div class="gallery-item reveal">
-        <img src="picture/sample_1.jpg" alt="書道作品1" />
-        <div class="gallery-overlay">
-          <h3>作品タイトル</h3>
-        </div>
-      </div>
-
-      <div class="gallery-item reveal">
-        <img src="picture/sample_2.jpg" alt="書道作品2" loading="lazy"/>
-        <div class="gallery-overlay">
-          <h3>作品タイトル</h3>
-        </div>
-      </div>
-
-      <div class="gallery-item reveal">
-        <img src="picture/sample_3.jpg" alt="書道作品3" loading="lazy"/>
-        <div class="gallery-overlay">
-          <h3>作品タイトル</h3>
-        </div>
-      </div>
-
-      <div class="gallery-item reveal">
-        <img src="picture/seikanjitoku.jpg" alt="書道作品4" loading="lazy"/>
-        <div class="gallery-overlay">
-          <h3>静観自得</h3>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  
-
-  <!-- Profile Section -->
-  <section id="profile" class="profile">
-    <div class="section-title profile-title">Profile</div>
-    <div class="profile-container">
-      <div class="profile-image">
-        <img src="picture/1.1_artistphoto.jpg" alt="murata chino" />
-      </div>
-      <div class="profile-content">
-        <h2>村田 智野 murata chino</h2>
-        <p>
-          奈良県出身、埼玉県在住。<br />
-          奈良教育大学書道芸術専修卒業。<br />
-          主に書と篆刻を制作しています。
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <div class="section-title">Contact</div>
-    <div class="contact-content">
-      <h2>お問い合わせ</h2>
-      <p>
-        作品に関するお問い合わせ、ご依頼は<br />
-        Contact Me もしくは<a href="https://www.instagram.com/chino_murata/">Instagram</a>のDMよりお気軽にご連絡ください。
-      </p>
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSfYiP25j410rGIHICzYmb-r6kKbPRrgvNj50Bug_0qsInX5KQ/viewform"
-        class="contact-button"
-        target="_blank"
-        rel="noopener noreferrer"
-      >Contact Me</a>
-      
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <a href="#" class="footer-logo">chino murata</a>
-      <ul class="footer-nav">
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#profile">Profile</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="social-links">
-        <a href="https://www.instagram.com/chinomurata/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://note.com/chinomurata" target="_blank" rel="noopener noreferrer">note</a>
-      </div>
-    </div>
-    <p class="copyright">Copyright © chino murata</p>
-  </footer>
-
-  <script src="script.js" defer></script>
+  <h1>Chino Murata</h1>
 </body>
 </html>
